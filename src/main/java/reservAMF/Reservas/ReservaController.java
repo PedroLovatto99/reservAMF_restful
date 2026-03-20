@@ -26,10 +26,10 @@ public class ReservaController {
     }
 
     @PostMapping
-    public ResponseEntity<String> criarReserva(@Valid @RequestBody ReservaRequest reservaRequest) {
+    public ResponseEntity<ReservaResponse> criarReserva(@Valid @RequestBody ReservaRequest reservaRequest) {
         ReservaResponse novaReserva = reservaService.criarReserva(reservaRequest);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("Reserva criada com sucesso" + novaReserva);
+                .body(novaReserva);
     }
 
     @GetMapping("/{id}")
@@ -57,7 +57,7 @@ public class ReservaController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?>  alterarStatus(@PathVariable Long id, @Valid @RequestBody AlterarStatusRequest Statusrequest){
+    public ResponseEntity<?> alterarStatus(@PathVariable Long id, @Valid @RequestBody AlterarStatusRequest Statusrequest){
         ReservaResponse reserva = reservaService.alterarStatus(id, Statusrequest);
 
         if(reserva != null) {
@@ -67,6 +67,17 @@ public class ReservaController {
                     .body("Reserva não encontrada");
         }
 
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletarReserva(@PathVariable Long id) {
+        if(reservaService.listarReservaPorId(id) != null) {
+            reservaService.deletarReserva(id);
+            return ResponseEntity.ok("Reserva deletada com sucesso");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Reserva deletada com sucesso");
+        }
     }
 
 

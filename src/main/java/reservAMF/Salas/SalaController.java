@@ -25,10 +25,10 @@ public class SalaController {
     }
 
     @PostMapping
-    public ResponseEntity<String> criarSala(@Valid @RequestBody SalaRequest salaRequest) {
+    public ResponseEntity<SalaResponse> criarSala(@Valid @RequestBody SalaRequest salaRequest) {
         SalaResponse sala = salaService.criarSala(salaRequest);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("Sala criada com sucesso: " + sala);
+                .body(sala);
 
     }
 
@@ -59,7 +59,7 @@ public class SalaController {
         }
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deletarSala(@PathVariable Long id) {
         if(salaService.listarSalaPorId(id) != null) {
             salaService.deletarSala(id);
