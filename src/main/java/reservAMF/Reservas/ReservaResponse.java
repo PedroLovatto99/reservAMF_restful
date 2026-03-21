@@ -1,5 +1,6 @@
 package reservAMF.Reservas;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public record ReservaResponse(
@@ -12,4 +13,4 @@ public record ReservaResponse(
     String motivo,
     ReservaStatus status
 
-) { }
+) implements Serializable { }

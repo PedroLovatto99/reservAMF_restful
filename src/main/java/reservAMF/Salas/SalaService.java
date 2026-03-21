@@ -1,5 +1,6 @@
 package reservAMF.Salas;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -21,6 +22,7 @@ public class SalaService {
         this.salaMapper = salaMapper;
     }
 
+    @Cacheable("lista_salas")
     public Page<SalaResponse> listarSalas(Pageable paginacao) {
         Page<SalaModel> paginaDeSalas = salaRepo.findAll(paginacao);
         return paginaDeSalas.map(salaMapper::toResponse);

@@ -1,5 +1,6 @@
 package reservAMF.Reservas;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,7 @@ public class ReservaService {
         this.reservaMapper = reservaMapper;
     }
 
+    @Cacheable("lista_reservas")
     public Page<ReservaResponse> listarReservas(Pageable paginacao) {
         Page<ReservaModel> paginaReservas = reservaRepo.findAll(paginacao);
             return paginaReservas.map(reservaMapper::toResponse);
