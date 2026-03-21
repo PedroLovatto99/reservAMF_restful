@@ -8,6 +8,7 @@ import reservAMF.Salas.SalaModel;
 import reservAMF.Salas.SalaRepository;
 import reservAMF.Salas.SalaResponse;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -34,6 +35,18 @@ public class ReservaService {
 
 
     public ReservaResponse criarReserva(ReservaRequest reservaRequest) {
+
+        boolean conflito = reservaRepo.existsBySalaIdAndStatusNotAndDataHoraInicioLessThanAndDataHoraFimGreaterThan(
+                reservaRequest.sala(),
+                ReservaStatus.CANCELADA,
+                reservaRequest.dataHoraFim(),
+                reservaRequest.dataHoraInicio()
+        );
+
+        if (conflito) {
+            throw new IllegalArgumentException("Essa sala já possui uma reserva nesse mesmo horário");
+        }
+
 
         SalaModel sala = salaRepository.findById(reservaRequest.sala())
                 .orElse(null);
@@ -91,5 +104,7 @@ public class ReservaService {
         }
 
     }
+
+
 
 }
