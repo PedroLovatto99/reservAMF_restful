@@ -16,7 +16,7 @@ O **ReservAMF** é uma API RESTful completa desenvolvida para gerenciar a reserv
 ---
 
 ## 🛠️ Stack do projeto
-* **Back-End:** Java 21 & Spring Boot 3
+* **Back-End:** Java 21 & Spring Boot 4
 * **Persistência/ORM:** JPA / Hibernate
 * **Banco de Dados:** PostgreSQL
 * **Cache:** Redis
