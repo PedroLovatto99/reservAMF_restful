@@ -1,4 +1,4 @@
-package reservAMF.Salas;
+package reservAMF.DTO.Response;
 
 import java.io.Serializable;
 

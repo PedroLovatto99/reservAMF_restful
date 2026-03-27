@@ -1,4 +1,4 @@
-package reservAMF.Users;
+package reservAMF.Models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

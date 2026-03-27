@@ -1,4 +1,4 @@
-package reservAMF.Reservas;
+package reservAMF.Controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -11,9 +11,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import reservAMF.Salas.SalaResponse;
-
-import java.util.List;
+import reservAMF.DTO.Request.AlterarStatusRequest;
+import reservAMF.DTO.Request.ReservaRequest;
+import reservAMF.DTO.Response.ReservaResponse;
+import reservAMF.Service.ReservaService;
 
 @Controller
 @RequestMapping("/reservas")

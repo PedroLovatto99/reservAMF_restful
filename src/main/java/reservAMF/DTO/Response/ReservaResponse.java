@@ -1,4 +1,6 @@
-package reservAMF.Reservas;
+package reservAMF.DTO.Response;
+
+import reservAMF.Enum.ReservaStatus;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

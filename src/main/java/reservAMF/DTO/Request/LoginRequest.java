@@ -1,4 +1,4 @@
-package reservAMF.Users;
+package reservAMF.DTO.Request;
 
 import jakarta.validation.constraints.NotEmpty;
 

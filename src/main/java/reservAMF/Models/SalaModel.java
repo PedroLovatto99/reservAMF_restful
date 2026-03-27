@@ -1,11 +1,10 @@
-package reservAMF.Salas;
+package reservAMF.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import reservAMF.Reservas.ReservaModel;
 
 import java.util.List;
 

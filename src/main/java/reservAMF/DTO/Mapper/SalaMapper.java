@@ -1,6 +1,9 @@
-package reservAMF.Salas;
+package reservAMF.DTO.Mapper;
 
 import org.springframework.stereotype.Component;
+import reservAMF.Models.SalaModel;
+import reservAMF.DTO.Request.SalaRequest;
+import reservAMF.DTO.Response.SalaResponse;
 
 @Component
 public class SalaMapper {

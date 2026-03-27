@@ -1,7 +1,11 @@
-package reservAMF.Reservas;
+package reservAMF.DTO.Mapper;
 
 import org.springframework.stereotype.Component;
-import reservAMF.Salas.SalaModel;
+import reservAMF.Models.ReservaModel;
+import reservAMF.DTO.Request.ReservaRequest;
+import reservAMF.DTO.Response.ReservaResponse;
+import reservAMF.Enum.ReservaStatus;
+import reservAMF.Models.SalaModel;
 
 @Component
 public class ReservaMapper {

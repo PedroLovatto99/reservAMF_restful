@@ -1,10 +1,10 @@
-package reservAMF.Reservas;
+package reservAMF.Models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import reservAMF.Salas.SalaModel;
+import reservAMF.Enum.ReservaStatus;
 
 import java.time.LocalDateTime;
 

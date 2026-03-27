@@ -1,4 +1,4 @@
-package reservAMF.Auth;
+package reservAMF.Controller;
 
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reservAMF.Config.TokenConfig;
-import reservAMF.Users.*;
+import reservAMF.DTO.Request.LoginRequest;
+import reservAMF.DTO.Request.RegisterUserRequest;
+import reservAMF.DTO.Response.LoginResponse;
+import reservAMF.DTO.Response.RegisterUserResponse;
+import reservAMF.Models.UserModel;
+import reservAMF.Repository.UserRepository;
 
 @RestController
 @RequestMapping("/auth")

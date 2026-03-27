@@ -1,4 +1,4 @@
-package reservAMF.Reservas;
+package reservAMF.DTO.Request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.AssertTrue;

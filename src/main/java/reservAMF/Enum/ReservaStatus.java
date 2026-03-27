@@ -1,4 +1,4 @@
-package reservAMF.Reservas;
+package reservAMF.Enum;
 
 public enum ReservaStatus {
 

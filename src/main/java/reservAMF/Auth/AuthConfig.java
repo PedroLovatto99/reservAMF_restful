@@ -4,7 +4,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import reservAMF.Users.UserRepository;
+import reservAMF.Repository.UserRepository;
 
 @Service
 public class AuthConfig implements UserDetailsService {

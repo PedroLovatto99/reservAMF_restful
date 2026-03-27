@@ -1,18 +1,21 @@
-package reservAMF.Reservas;
+package reservAMF.Service;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import reservAMF.Salas.SalaMapper;
-import reservAMF.Salas.SalaModel;
-import reservAMF.Salas.SalaRepository;
-import reservAMF.Salas.SalaResponse;
+import reservAMF.DTO.Mapper.ReservaMapper;
+import reservAMF.DTO.Request.ReservaRequest;
+import reservAMF.DTO.Response.ReservaResponse;
+import reservAMF.Enum.ReservaStatus;
+import reservAMF.Models.ReservaModel;
+import reservAMF.Repository.ReservaRepository;
+import reservAMF.DTO.Mapper.SalaMapper;
+import reservAMF.Models.SalaModel;
+import reservAMF.Repository.SalaRepository;
+import reservAMF.DTO.Request.AlterarStatusRequest;
 
-import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ReservaService {
