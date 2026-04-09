@@ -39,7 +39,7 @@ Você precisará ter instalado:
 
 **1. Clone o repositório:**
 ```bash
-git clone [https://github.com/PedroLovatto99/reservAMF.git)
+git clone[https://github.com/PedroLovatto99/reservAMF.git
 cd projeto-reservamf
 ```
 **2. Configure o Ambiente:**
